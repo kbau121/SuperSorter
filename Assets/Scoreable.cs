@@ -41,6 +41,11 @@ public class Scoreable : MonoBehaviour
 
         Debug.Log((success ? "Successful" : "Failed") + " Score");
 
+        if (success)
+        {
+            LevelRoot.Instance.AudioManager.PlaySuccessClip(transform.position);
+        }
+
         if (LevelManager.Instance != null)
             LevelManager.Instance.ModifyScore(success);
     }
