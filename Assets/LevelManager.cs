@@ -21,20 +21,24 @@ public class LevelManager : MonoBehaviour
     private LevelEvent.RunImplementation EventCallback;
 
     // Temporary Testing Variables
-    private int score = 0;
-    [SerializeField]
-    private Text text;
+    public int Score { get; private set; } = 0;
+    public float TimeElapsed { get; private set; } = 0.0f;
 
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
+            Destroy(gameObject);  // should never trigger
         }
         else
         {
             Instance = this;
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
     }
 
     void Start()
@@ -70,11 +74,8 @@ public class LevelManager : MonoBehaviour
         EventCallback = levelEvent.Run(out EventTimer);
     }
 
-    public void Score(bool success)
+    public void ModifyScore(bool success)
     {
-        if (success) score += 10;
-        else score -= 1;
-
-        text.text = score.ToString();
+        Score += success ? 10 : -1;
     }
 }
