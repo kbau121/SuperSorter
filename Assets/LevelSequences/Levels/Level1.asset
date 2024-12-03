@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e4227ee9c9ab145ad38ffc800df96e, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  DoLoop: 0
+  DoLoop: 1
   Events:
   - {fileID: 11400000, guid: 4b103892cb981b84e84341bd85dd0397, type: 2}
   - {fileID: 11400000, guid: 901990ab5558e944f8395598ec72af04, type: 2}

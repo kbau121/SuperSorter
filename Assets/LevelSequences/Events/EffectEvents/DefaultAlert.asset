@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DefaultAlert
   m_EditorClassIdentifier: 
   EventName: 
-  Delay: 5
+  Delay: 2.5
   LauncherID: 0
