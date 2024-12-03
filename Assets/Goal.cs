@@ -10,7 +10,10 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Scoreable scoreable = other.gameObject.GetComponent<Scoreable>();
+        Scoreable scoreable = other.gameObject.GetComponentInParent<Scoreable>();
+
+        if (!scoreable) Debug.Log("NULL");
+
         if (!scoreable) return;
 
         bool success = true;
