@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,21 +13,17 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     private LevelSequence LevelSequence;
-    private int EventIndex = 0;
     private float EventTimer = 0f;
 
-    private Dictionary<int, Launcher> Launchers;
+    [NonSerialized]
+    public Dictionary<int, Launcher> Launchers;
+
+    private LevelEvent.RunImplementation EventCallback;
 
     // Temporary Testing Variables
     private int score = 0;
     [SerializeField]
     private Text text;
-
-    // Temporary Alert Timer
-    // TODO Make an alert event
-    private float alertTimer = 0f;
-    private float alertOffset = 0.5f;
-    private int launchIndex;
 
     private void Awake()
     {
@@ -42,82 +39,35 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        Launchers = Object.FindObjectsOfType<Launcher>().ToDictionary(
+        Launchers = UnityEngine.Object.FindObjectsOfType<Launcher>().ToDictionary(
             (launcher) => { return launcher.LauncherID; },
             (launcher) => { return launcher; });
 
-        SetTimer();
+        LevelSequence.Reset();
     }
 
     void Update()
     {
         EventTimer -= Time.deltaTime;
-        alertTimer -= Time.deltaTime;
 
-        if (alertTimer <= 0f) TriggerAlert();
-        if (EventTimer <= 0f) TriggerEvent();
-    }
-
-    private void TriggerAlert()
-    {
-        LevelEvent levelEvent = LevelSequence.Events[EventIndex];
-
-        launchIndex = Random.Range(0, levelEvent.LaunchEvents.Length);
-        LaunchEvent launchEvent = levelEvent.LaunchEvents[launchIndex];
-        if (Launchers.ContainsKey(launchEvent.LauncherID))
+        if (EventTimer <= 0f)
         {
-            Launcher launcher = Launchers[launchEvent.LauncherID];
-
-            launcher.Alert();
+            TriggerEvent();
         }
-        
-        alertTimer = float.PositiveInfinity;
     }
 
     private void TriggerEvent()
     {
-        LevelEvent levelEvent = LevelSequence.Events[EventIndex];
+        if (EventCallback != null) EventCallback();
 
-        //int launchIndex = Random.Range(0, levelEvent.LaunchEvents.Length);
-        LaunchEvent launchEvent = levelEvent.LaunchEvents[launchIndex];
-        if (Launchers.ContainsKey(launchEvent.LauncherID))
+        LevelEvent levelEvent = LevelSequence.Next();
+        if (levelEvent == null)
         {
-            Launcher launcher = Launchers[launchEvent.LauncherID];
-
-            int objectIndex = Random.Range(0, launchEvent.Objects.Count);
-            launcher.LaunchObject(
-                launchEvent.Objects[objectIndex],
-                launchEvent.Target, launchEvent.Strength,
-                launchEvent.TargetRadius, launchEvent.StrengthRange
-                );
-        }
-
-        EventIndex++;
-        SetTimer();
-    }
-
-    private void SetTimer()
-    {
-        // A valid event exists
-        if (EventIndex < LevelSequence.Events.Length)
-        {
-            EventTimer = LevelSequence.Events[EventIndex].Delay;
-            alertTimer = EventTimer - alertOffset;
+            EventTimer = float.PositiveInfinity;
             return;
         }
 
-        // The sequence should loop
-        if (LevelSequence.DoLoop && LevelSequence.Events.Length > 0)
-        {
-            EventIndex = 0;
-            EventTimer = LevelSequence.Events[EventIndex].Delay;
-            alertTimer = EventTimer - alertOffset;
-            return;
-        }
-
-        // No more valid events exist
-        EventTimer = float.PositiveInfinity;
-        alertTimer = float.PositiveInfinity;
+        EventCallback = levelEvent.Run(out EventTimer);
     }
 
     public void Score(bool success)
