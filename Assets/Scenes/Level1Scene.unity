@@ -902,9 +902,13 @@ PrefabInstance:
       propertyPath: TargetRadius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4305064640960803888, guid: a8bbbcf9632a37a45aa2b07d4e304874, type: 3}
+      propertyPath: GizmoTimespan
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5973837251599043017, guid: a8bbbcf9632a37a45aa2b07d4e304874, type: 3}
       propertyPath: m_Name
-      value: Launcher
+      value: Launcher0
       objectReference: {fileID: 0}
     - target: {fileID: 6461686868877431667, guid: a8bbbcf9632a37a45aa2b07d4e304874, type: 3}
       propertyPath: m_LocalScale.x
@@ -5333,7 +5337,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1. Throw objects to the portal of the same color.
+  m_Text: 'Level 1
+
+    1. Throw objects to the portal of the same color.'
 --- !u!222 &799391817
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10084,57 +10090,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.009499997, y: 0.01770607, z: -0.0011095628}
     m_Extent: {x: 0.04527676, y: 0.05372102, z: 0.06648618}
   m_DirtyAABB: 0
---- !u!1 &1512292870
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1512292872}
-  - component: {fileID: 1512292871}
-  m_Layer: 0
-  m_Name: Launcher-1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1512292871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512292870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09fa39ec87fb58d4c9a55ae7c7f5e3b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LauncherID: 1
-  Strength: 7
-  StrengthRange: 0
-  Target: {x: 0, y: 0, z: -1}
-  TargetRadius: 0.5
-  GizmoDensity: 25
-  GizmoTimespan: 5
---- !u!4 &1512292872
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512292870}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1513591822
 GameObject:
   m_ObjectHideFlags: 0
@@ -10164,7 +10119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94710038e271c084cb3762fcb4987548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelSequence: {fileID: 11400000, guid: c5e677748502f9942a54f04cd1998f4d, type: 2}
+  levelSequence: {fileID: 11400000, guid: c5e677748502f9942a54f04cd1998f4d, type: 2}
 --- !u!4 &1513591824
 Transform:
   m_ObjectHideFlags: 0
@@ -13771,7 +13726,6 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 241965553}
   - {fileID: 465318646}
-  - {fileID: 1512292872}
   - {fileID: 2050515711}
   - {fileID: 144772293}
   - {fileID: 1442267514}

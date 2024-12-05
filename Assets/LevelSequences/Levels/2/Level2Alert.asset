@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32fd9f497098dea44af3c19fe7ca1d9a, type: 3}
-  m_Name: DefaultAlert
+  m_Name: Level2Alert
   m_EditorClassIdentifier: 
   EventName: 
-  Delay: 2.5
-  LauncherID: 0
+  Delay: 4
+  LauncherID: 1

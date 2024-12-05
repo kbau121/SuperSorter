@@ -10,14 +10,12 @@ using static LevelSequence;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
-    private LevelSequence defaultLevelSequence = null;
+    private LevelSequence levelSequence = null;
 
     private float EventTimer = 0f;
 
     [NonSerialized]
     public Dictionary<int, Launcher> Launchers;
-
-    private LevelSequence levelSequence = null;
 
     private LevelEvent.RunImplementation EventCallback;
 
@@ -27,16 +25,6 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        if (GlobalInfo.CurrentLevelSequence != null)
-        {
-            levelSequence = GlobalInfo.CurrentLevelSequence;
-        }
-        else
-        {
-            Debug.Log("Falling back to default level sequence.");
-            levelSequence = defaultLevelSequence;
-        }
-
         Launchers = UnityEngine.Object.FindObjectsOfType<Launcher>().ToDictionary(
             (launcher) => { return launcher.LauncherID; },
             (launcher) => { return launcher; });
@@ -52,6 +40,8 @@ public class LevelManager : MonoBehaviour
         {
             TriggerEvent();
         }
+
+        TimeElapsed += Time.deltaTime;
     }
 
     private void TriggerEvent()

@@ -9,10 +9,8 @@ using UnityEngine.SceneManagement;
 public class SelectSceneTransitioner : MonoBehaviour
 {
     [SerializeField] private InteractableUnityEventWrapper level1EventWrapper;
-    [SerializeField] private LevelSequence level1Sequence;
 
     [SerializeField] private InteractableUnityEventWrapper level2EventWrapper;
-    [SerializeField] private LevelSequence level2Sequence;
 
     private void Start()
     {
@@ -23,14 +21,12 @@ public class SelectSceneTransitioner : MonoBehaviour
     private void GoLevel1()
     {
         Debug.Log("Going to level 1.");
-        GlobalInfo.CurrentLevelSequence = level1Sequence;
-        SceneManager.LoadScene("LevelScene");
+        SceneManager.LoadScene("Level1Scene");
     }
 
     private void GoLevel2()
     {
         Debug.Log("Going to level 2.");
-        GlobalInfo.CurrentLevelSequence = level2Sequence;
-        SceneManager.LoadScene("LevelScene");
+        SceneManager.LoadScene("Level2Scene");
     }
 }
