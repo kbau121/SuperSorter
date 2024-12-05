@@ -36,7 +36,8 @@ public class Scoreable : MonoBehaviour
 
     public void Score(bool success)
     {
-        if (IsScored) return;
+        if (IsScored) 
+            return;
         IsScored = true;
 
         Debug.Log((success ? "Successful" : "Failed") + " Score");
@@ -46,8 +47,15 @@ public class Scoreable : MonoBehaviour
             LevelRoot.Instance.AudioManager.PlaySuccessClip(transform.position);
         }
 
-        if (LevelManager.Instance != null)
-            LevelManager.Instance.ModifyScore(success);
+        LevelRoot levelRoot = LevelRoot.Instance;
+        if (levelRoot == null)
+            return;
+
+        LevelManager levelManager = levelRoot.LevelManager;
+        if (levelManager == null)
+            return;
+        
+        levelManager.ModifyScore(success);
     }
 
     private void OnDestroy()

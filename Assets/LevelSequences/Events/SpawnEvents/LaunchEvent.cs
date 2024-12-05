@@ -18,8 +18,12 @@ public class LaunchEvent : LevelEvent
 
     protected override void _RunImplementation()
     {
-        if (!LevelManager.Instance.Launchers.ContainsKey(LauncherID)) return;
-        Launcher launcher = LevelManager.Instance.Launchers[LauncherID];
+        LevelManager levelManager = LevelRoot.Instance.LevelManager;
+
+        if (!levelManager.Launchers.ContainsKey(LauncherID))
+            return;
+        
+        Launcher launcher = levelManager.Launchers[LauncherID];
 
         int randomObjectIdx = Random.Range(0, Objects.Count);
 
@@ -27,6 +31,6 @@ public class LaunchEvent : LevelEvent
             Objects[randomObjectIdx],
             Target, Strength,
             TargetRadius, StrengthRange
-            );
+        );
     }
 }

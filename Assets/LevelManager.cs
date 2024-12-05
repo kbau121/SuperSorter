@@ -9,8 +9,6 @@ using static LevelSequence;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance { get; private set; }
-
     [SerializeField]
     private LevelSequence LevelSequence;
     private float EventTimer = 0f;
@@ -23,23 +21,6 @@ public class LevelManager : MonoBehaviour
     // Temporary Testing Variables
     public int Score { get; private set; } = 0;
     public float TimeElapsed { get; private set; } = 0.0f;
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);  // should never trigger
-        }
-        else
-        {
-            Instance = this;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        Instance = null;
-    }
 
     void Start()
     {

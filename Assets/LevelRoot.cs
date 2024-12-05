@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelRoot : MonoBehaviour
 {
-    private static LevelRoot instance;
+    private static LevelRoot instance = null;
 
     public static LevelRoot Instance
     {
@@ -33,9 +33,14 @@ public class LevelRoot : MonoBehaviour
     }
 
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private LevelManager levelManager;
 
     public AudioManager AudioManager => audioManager;
+    public LevelManager LevelManager => levelManager;
 
+    /// <summary>
+    /// Use late script execution order so that this runs after other OnDestroy's.
+    /// </summary>
     private void OnDestroy()
     {
         instance = null;

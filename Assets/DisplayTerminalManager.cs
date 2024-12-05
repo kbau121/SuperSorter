@@ -15,7 +15,7 @@ public class DisplayTerminalManager : MonoBehaviour
 
     private void Update()
     {
-        LevelManager levelManager = LevelManager.Instance;
+        LevelManager levelManager = LevelRoot.Instance.LevelManager;
 
         scoreText.text = $"Score: {levelManager.Score}";
 
