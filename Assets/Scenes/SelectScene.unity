@@ -3408,9 +3408,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b03f88d8332b7c438457aaae9483747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitEventWrapper: {fileID: 0}
   level1EventWrapper: {fileID: 1592343072}
+  level1Sequence: {fileID: 0}
   level2EventWrapper: {fileID: 1184285725}
+  level2Sequence: {fileID: 0}
 --- !u!4 &502433524
 Transform:
   m_ObjectHideFlags: 0
@@ -6478,7 +6479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 1038450458}
-  levelManager: {fileID: 1513591823}
+  levelManager: {fileID: 0}
 --- !u!4 &986732402
 Transform:
   m_ObjectHideFlags: 0
@@ -9913,51 +9914,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1513591822
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1513591824}
-  - component: {fileID: 1513591823}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1513591823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513591822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94710038e271c084cb3762fcb4987548, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelSequence: {fileID: 11400000, guid: c5e677748502f9942a54f04cd1998f4d, type: 2}
---- !u!4 &1513591824
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513591822}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.55140364, y: -0.6025311, z: -10.318511}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13472,7 +13428,6 @@ SceneRoots:
   - {fileID: 465318646}
   - {fileID: 1512292872}
   - {fileID: 1832537360}
-  - {fileID: 1513591824}
   - {fileID: 2007289107}
   - {fileID: 1641921619}
   - {fileID: 1184285722}
