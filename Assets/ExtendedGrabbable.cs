@@ -77,6 +77,10 @@ public class ExtendedGrabbable : PointableElement, IGrabbable, ITimeConsumer
     [Tooltip("Applies throwing velocities to the rigidbody when fully released.")]
     private bool _throwWhenUnselected = true;
 
+    [Header("Custom")]
+    [SerializeField]
+    private float _throwScale = 1.5f;
+
     public int MaxGrabPoints
     {
         get
@@ -156,6 +160,7 @@ public class ExtendedGrabbable : PointableElement, IGrabbable, ITimeConsumer
         {
             _throw = new ThrowWhenUnselected(_rigidbody, this);
             _throw.SetTimeProvider(this._timeProvider);
+            _throw.SetThrowScale(_throwScale);
         }
 
         this.EndStart(ref _started);
@@ -353,11 +358,17 @@ public class ExtendedGrabbable : PointableElement, IGrabbable, ITimeConsumer
     {
         private Rigidbody _rigidbody;
         private IPointable _pointable;
+        private float _throwScale = 1.0f;
 
         private Func<float> _timeProvider = () => Time.time;
         public void SetTimeProvider(Func<float> timeProvider)
         {
             _timeProvider = timeProvider;
+        }
+
+        public void SetThrowScale(float throwScale)
+        {
+            _throwScale = throwScale;
         }
 
         private static IObjectPool<RANSACVelocity> _ransacVelocityPool = new ObjectPool<RANSACVelocity>(
@@ -520,8 +531,10 @@ public class ExtendedGrabbable : PointableElement, IGrabbable, ITimeConsumer
                 _rigidbody.angularVelocity = torque;
             }
 
-            float throwScale = 1.5f;
-            _rigidbody.velocity *= throwScale;
+            _rigidbody.velocity *= _throwScale;
+            // Debug.Log("ThrowScale: " + _throwScale);
+            //float throwScale = 1.0f;
+            //_rigidbody.velocity *= throwScale;
         }
 
         private void GetThrowVelocities(out Vector3 velocity, out Vector3 torque)

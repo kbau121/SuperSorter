@@ -172,6 +172,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1323955848301085626}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _throwScale: 1.5
 --- !u!114 &5308920490517356558
 MonoBehaviour:
   m_ObjectHideFlags: 0
