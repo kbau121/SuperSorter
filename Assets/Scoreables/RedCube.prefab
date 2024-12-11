@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8152108619655180701}
   - component: {fileID: 890112200923791128}
   - component: {fileID: 5427549054537263477}
-  - component: {fileID: 1075774751110687415}
+  - component: {fileID: -1412606374103962712}
   - component: {fileID: 8679595704291627748}
   m_Layer: 0
   m_Name: RedCube
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Color: 0
   _Shape: 0
---- !u!114 &1075774751110687415
+--- !u!114 &-1412606374103962712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1709290048071153110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a97c0c7ff2b1794ea122160f2d20058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transferOnSecondSelection: 1
@@ -188,7 +188,7 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 1075774751110687415}
+  _pointableElement: {fileID: -1412606374103962712}
   _rigidbody: {fileID: 890112200923791128}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0

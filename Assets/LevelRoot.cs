@@ -34,9 +34,11 @@ public class LevelRoot : MonoBehaviour
 
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private LevelManager levelManager;
+    [SerializeField] private Transform hmdTransform;
 
     public AudioManager AudioManager => audioManager;
     public LevelManager LevelManager => levelManager;
+    public Transform HmdTransform => hmdTransform;
 
     /// <summary>
     /// Use late script execution order so that this runs after other OnDestroy's.

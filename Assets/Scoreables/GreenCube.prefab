@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8397928010868255808}
   - component: {fileID: 2485699516346624648}
   - component: {fileID: 9074679485426640888}
-  - component: {fileID: 8181788651842434079}
+  - component: {fileID: -2130861495904115668}
   - component: {fileID: -2633765634759561095}
   m_Layer: 0
   m_Name: GreenCube
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Color: 2
   _Shape: 0
---- !u!114 &8181788651842434079
+--- !u!114 &-2130861495904115668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2358137919896599468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a97c0c7ff2b1794ea122160f2d20058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transferOnSecondSelection: 1
@@ -188,7 +188,7 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 8181788651842434079}
+  _pointableElement: {fileID: -2130861495904115668}
   _rigidbody: {fileID: 2485699516346624648}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
