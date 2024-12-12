@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoLoop: 1
   Events:
+  - {fileID: 11400000, guid: 38b762c9bf6cbc542b5cbaf451a399b2, type: 2}
   - {fileID: 11400000, guid: 59d2aee41623b704cac36bb58fb66a71, type: 2}
