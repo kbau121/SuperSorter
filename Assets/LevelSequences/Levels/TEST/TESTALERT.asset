@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38e4227ee9c9ab145ad38ffc800df96e, type: 3}
-  m_Name: TESTSEQUENCE
+  m_Script: {fileID: 11500000, guid: 32fd9f497098dea44af3c19fe7ca1d9a, type: 3}
+  m_Name: TESTALERT
   m_EditorClassIdentifier: 
-  DoLoop: 1
-  Events:
-  - {fileID: 11400000, guid: 38b762c9bf6cbc542b5cbaf451a399b2, type: 2}
-  - {fileID: 11400000, guid: 59d2aee41623b704cac36bb58fb66a71, type: 2}
+  EventName: 
+  Delay: 1
+  LauncherID: 0

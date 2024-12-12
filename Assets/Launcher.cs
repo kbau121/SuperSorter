@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -34,11 +36,6 @@ public class Launcher : MonoBehaviour
     [Min(0f)]
     private float GizmoTimespan = 3f;
 
-    private void Start()
-    {
-        AudioSource = GetComponent<AudioSource>();
-    }
-
     private struct TargetParams
     {
         public bool DoLob;
@@ -57,6 +54,11 @@ public class Launcher : MonoBehaviour
             Target = target;
             TargetRadius = targetRadius;
         }
+    }
+
+    private void Start()
+    {
+        AudioSource = GetComponent<AudioSource>();
     }
 
     private TargetParams? GetTargetParams(Vector3 target, float strength, float targetRadius = 0f, float strengthRange = 0f, bool doLob = false)
@@ -156,6 +158,8 @@ public class Launcher : MonoBehaviour
         rb.velocity = validParams.Direction * validParams.Strength;
         rb.angularVelocity = Random.onUnitSphere;
     }
+
+
 
     private void ValidGizmos(TargetParams targetParams)
     {

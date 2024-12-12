@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        Launchers = UnityEngine.Object.FindObjectsOfType<Launcher>().ToDictionary(
+        Launchers = UnityEngine.Object.FindObjectsOfType<Launcher>().Where((launcher) => launcher.LauncherID >= 0).ToDictionary(
             (launcher) => { return launcher.LauncherID; },
             (launcher) => { return launcher; });
 
