@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38e4227ee9c9ab145ad38ffc800df96e, type: 3}
-  m_Name: Level1Sequence
+  m_Script: {fileID: 11500000, guid: 32fd9f497098dea44af3c19fe7ca1d9a, type: 3}
+  m_Name: Level1Alert
   m_EditorClassIdentifier: 
-  DoLoop: 1
-  Events:
-  - {fileID: 11400000, guid: 4b103892cb981b84e84341bd85dd0397, type: 2}
-  - {fileID: 11400000, guid: 901990ab5558e944f8395598ec72af04, type: 2}
+  EventName: 
+  Delay: 6
+  LauncherID: 0

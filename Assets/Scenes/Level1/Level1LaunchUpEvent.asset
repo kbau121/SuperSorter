@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fa1994e57066a645b0d33432ed71d0d, type: 3}
-  m_Name: Level2Launch1
+  m_Name: Level1LaunchUpEvent
   m_EditorClassIdentifier: 
-  EventName: TestLaunch
-  Delay: 1
-  LauncherID: 1
+  EventName: 
+  Delay: 2
+  LauncherID: 0
   Strength: 10
   StrengthRange: 0
   Target: {x: 0, y: 1.5, z: 0}
-  TargetRadius: 1
+  TargetRadius: 0
   Objects:
-  - {fileID: 1709290048071153110, guid: 9c9495f407a39be47813dc6585db5c1d, type: 3}
   - {fileID: 5887485900284755891, guid: 991e9b1abfb85c8408caec95f47519ee, type: 3}
+  - {fileID: 1709290048071153110, guid: 9c9495f407a39be47813dc6585db5c1d, type: 3}
   - {fileID: 2358137919896599468, guid: f96a323ceb3a34048a49ce43c259ddb2, type: 3}

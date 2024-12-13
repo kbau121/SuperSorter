@@ -13,6 +13,8 @@ public class LevelSequence : ScriptableObject
 
     private int NextIndex = 0;
 
+    public LevelEvent[] LevelEvents => Events;
+
     public void Reset()
     {
         NextIndex = 0;

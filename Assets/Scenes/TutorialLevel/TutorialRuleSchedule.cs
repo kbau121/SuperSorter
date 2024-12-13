@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObject/RuleSchedules/" + nameof(TutorialRuleSchedule))]
 public class TutorialRuleSchedule : RuleSchedule
 {
+    public override List<float> RulesChangeTimes => new();
+
     public override string GetRuleDescription(float timeElapsed)
     {
         return "Throw each cube into the goal of the same color.";

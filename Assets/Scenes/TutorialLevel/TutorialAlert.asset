@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TutorialAlert
   m_EditorClassIdentifier: 
   EventName: 
-  Delay: 1
+  Delay: 5
   LauncherID: 0
