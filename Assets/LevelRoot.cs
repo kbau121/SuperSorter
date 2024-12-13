@@ -33,10 +33,12 @@ public class LevelRoot : MonoBehaviour
     }
 
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private ParticleManager particleManager;
     [SerializeField] private LevelManager levelManager;
     [SerializeField] private Transform hmdTransform;
 
     public AudioManager AudioManager => audioManager;
+    public ParticleManager ParticleManager => particleManager;
     public LevelManager LevelManager => levelManager;
     public Transform HmdTransform => hmdTransform;
 

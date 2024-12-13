@@ -45,6 +45,7 @@ public class Scoreable : MonoBehaviour
         if (success)
         {
             LevelRoot.Instance.AudioManager.PlaySuccessClip(transform.position);
+            LevelRoot.Instance.ParticleManager.PlaySuccessParticle(transform.position);
         }
 
         LevelRoot levelRoot = LevelRoot.Instance;
