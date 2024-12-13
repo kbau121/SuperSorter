@@ -3416,6 +3416,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenCube
       objectReference: {fileID: 0}
+    - target: {fileID: 2358137919896599468, guid: f96a323ceb3a34048a49ce43c259ddb2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9044970970136098196, guid: f96a323ceb3a34048a49ce43c259ddb2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.874
@@ -5964,6 +5968,51 @@ Transform:
   - {fileID: 1169253122}
   m_Father: {fileID: 1630214207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &866703826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 866703828}
+  - component: {fileID: 866703827}
+  m_Layer: 0
+  m_Name: ParticleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &866703827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866703826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c28dca434451834686f033a117d943c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  successParticle: {fileID: 6107563057495086491, guid: ad55c7fb7d9cb98409202c8db80b7373, type: 3}
+--- !u!4 &866703828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866703826}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.2907124, y: 1.4918861, z: 1.2162513}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &877129306
 GameObject:
   m_ObjectHideFlags: 0
@@ -6893,6 +6942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 1038450458}
+  particleManager: {fileID: 866703827}
   levelManager: {fileID: 1513591823}
   hmdTransform: {fileID: 0}
 --- !u!4 &986732402
@@ -12294,6 +12344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueCube
       objectReference: {fileID: 0}
+    - target: {fileID: 5887485900284755891, guid: 991e9b1abfb85c8408caec95f47519ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13021,6 +13075,10 @@ PrefabInstance:
     - target: {fileID: 1709290048071153110, guid: 9c9495f407a39be47813dc6585db5c1d, type: 3}
       propertyPath: m_Name
       value: RedCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709290048071153110, guid: 9c9495f407a39be47813dc6585db5c1d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4206373427961066265, guid: 9c9495f407a39be47813dc6585db5c1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14129,3 +14187,4 @@ SceneRoots:
   - {fileID: 1822666417}
   - {fileID: 487507844}
   - {fileID: 2021253831}
+  - {fileID: 866703828}
