@@ -28,6 +28,11 @@ public class Goal : MonoBehaviour
         if (!scoreable) return;
 
         bool success = ruleSchedule.ItemIsCorrect(scoreable, _colorProperty, _levelManager.TimeElapsed);
+        if (!success)
+        {
+            LevelRoot.Instance.AudioManager.PlayWrongItemClip(transform.position);
+        }
+
         scoreable.Score(success);
 
         Destroy(scoreable.gameObject);

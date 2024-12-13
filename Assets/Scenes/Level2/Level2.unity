@@ -1859,6 +1859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   successClip: {fileID: 8300000, guid: ea888fc8a2b42d84e8f2792aba7d6b2a, type: 3}
+  wrongItemClip: {fileID: 8300000, guid: 493432639309e9b44bf2a522a3379618, type: 3}
 --- !u!4 &1688572519
 Transform:
   m_ObjectHideFlags: 0

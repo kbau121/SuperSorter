@@ -9,7 +9,7 @@ public class Level2RuleSchedule : RuleSchedule
 
     public override string GetRuleDescription(float timeElapsed)
     {
-        return "Red items go into the blue portal; blue items go into the red portal.";
+        return "Note the bouncing floor. Red items go into the blue portal; blue items go into the red portal.";
     }
 
     public override bool ItemIsCorrect(Scoreable scoreable, ColorProperty goalColorProperty, float timeElapsed)

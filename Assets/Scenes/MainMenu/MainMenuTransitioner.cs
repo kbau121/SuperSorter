@@ -11,12 +11,14 @@ public class MainMenuTransitioner : MonoBehaviour
     [SerializeField] private InteractableUnityEventWrapper tutorialEventWrapper;
     [SerializeField] private InteractableUnityEventWrapper level1EventWrapper;
     [SerializeField] private InteractableUnityEventWrapper level2EventWrapper;
+    [SerializeField] private InteractableUnityEventWrapper level3EventWrapper;
 
     private void Start()
     {
         tutorialEventWrapper.WhenSelect.AddListener(GoTutorial);
         level1EventWrapper.WhenSelect.AddListener(GoLevel1);
         level2EventWrapper.WhenSelect.AddListener(GoLevel2);
+        level3EventWrapper.WhenSelect.AddListener(GoLevel3);
     }
 
     private void GoTutorial()
@@ -34,6 +36,12 @@ public class MainMenuTransitioner : MonoBehaviour
     {
         Debug.Log("Going to level 2.");
         SceneManager.LoadScene("Level2");
+    }
+
+    private void GoLevel3()
+    {
+        Debug.Log("Going to level 3.");
+        SceneManager.LoadScene("Level3");
     }
 
 }

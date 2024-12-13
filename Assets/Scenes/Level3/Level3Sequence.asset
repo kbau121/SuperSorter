@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38e4227ee9c9ab145ad38ffc800df96e, type: 3}
-  m_Name: Level2Sequence
+  m_Name: Level3Sequence
   m_EditorClassIdentifier: 
   DoLoop: 1
   Events:
-  - {fileID: 11400000, guid: cb6f6370c755e6d41b8a7d0b438cb8a3, type: 2}
-  - {fileID: 11400000, guid: aec4ac3e7731aa04689ce4dd50caedba, type: 2}
-  - {fileID: 11400000, guid: cb6f6370c755e6d41b8a7d0b438cb8a3, type: 2}
-  - {fileID: 11400000, guid: 6f7019de9f3674749a67d586721aafa1, type: 2}
+  - {fileID: 11400000, guid: ef57edba15f3a1a408dcc2d1cdb7f751, type: 2}
+  - {fileID: 11400000, guid: b7915d28d2fa8804288cda8dcc07b5e6, type: 2}
