@@ -9,22 +9,20 @@ public class Level2RuleSchedule : RuleSchedule
 
     public override string GetRuleDescription(float timeElapsed)
     {
-        return "Note the bouncing floor. Red items go into the blue portal; blue items go into the red portal.";
+        return "Note the bouncing floor. Round objects go into the blue portal; other items go into the red portal.";
     }
 
     public override bool ItemIsCorrect(Scoreable scoreable, ColorProperty goalColorProperty, float timeElapsed)
     {
-        if (scoreable.ColorProperty == ColorProperty.RED)
+        if (goalColorProperty == ColorProperty.BLUE)
         {
-            return goalColorProperty == ColorProperty.BLUE;
+            return scoreable.ShapeProperty == ShapeProperty.Sphere;
         }
-        else if (scoreable.ColorProperty == ColorProperty.BLUE)
+        else if (goalColorProperty == ColorProperty.RED)
         {
-            return goalColorProperty == ColorProperty.RED;
+            return scoreable.ShapeProperty != ShapeProperty.Sphere;
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
     }
 }

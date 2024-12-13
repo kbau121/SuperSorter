@@ -1642,7 +1642,7 @@ MonoBehaviour:
   _ruleSchedule: {fileID: 11400000, guid: 9e4d3287a2b2e1844abb2c219b690696, type: 2}
   _successPoints: 10
   _failurePoints: -1
-  _durationSeconds: 60
+  _durationSeconds: 75
   _passingThreshold: 35
   _levelName: Level2
 --- !u!4 &1513591824

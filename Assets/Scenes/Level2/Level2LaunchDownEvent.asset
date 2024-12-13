@@ -22,3 +22,4 @@ MonoBehaviour:
   Objects:
   - {fileID: 5887485900284755891, guid: 991e9b1abfb85c8408caec95f47519ee, type: 3}
   - {fileID: 1709290048071153110, guid: 9c9495f407a39be47813dc6585db5c1d, type: 3}
+  - {fileID: 5887485900284755891, guid: 984e7a4637f48b54f8dda653e5ec649b, type: 3}
