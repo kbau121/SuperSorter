@@ -9,27 +9,48 @@ using static LevelSequence;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField]
-    private LevelSequence levelSequence = null;
-
     private float EventTimer = 0f;
-
-    [NonSerialized]
-    public Dictionary<int, Launcher> Launchers;
-
     private LevelEvent.RunImplementation EventCallback;
+
+    [SerializeField] private LevelSequence _levelSequence = null;
+    [SerializeField] private RuleSchedule _ruleSchedule = null;
+    [SerializeField] private int _successPoints = 1;
+    [SerializeField] private int _failurePoints = -1;
+    [SerializeField] private float _durationSeconds = 60;
+    [SerializeField] private float _passingThreshold = 0;
+    [SerializeField] private string _levelName = "Level";
+    
+
+
+    public LevelSequence LevelSequence => _levelSequence;
+    public RuleSchedule RuleSchedule => _ruleSchedule;
+    public int SuccessPoints => _successPoints;
+    public int FailurePoints => _failurePoints;
+    public float LevelDuration => _durationSeconds;
+    public float PassingThreshold => _passingThreshold;
+    public string LevelName => _levelName;
 
     // Temporary Testing Variables
     public int Score { get; private set; } = 0;
     public float TimeElapsed { get; private set; } = 0.0f;
 
+
+    [NonSerialized]
+    public Dictionary<int, Launcher> Launchers;
+
+
     void Start()
     {
-        Launchers = UnityEngine.Object.FindObjectsOfType<Launcher>().Where((launcher) => launcher.LauncherID >= 0).ToDictionary(
+        if (_ruleSchedule == null)
+        {
+            Debug.LogError($"{nameof(LevelManager)}'s {nameof(_ruleSchedule)} is not set.");
+        }
+
+        Launchers = FindObjectsOfType<Launcher>().Where((launcher) => launcher.LauncherID >= 0).ToDictionary(
             (launcher) => { return launcher.LauncherID; },
             (launcher) => { return launcher; });
 
-        levelSequence.Reset();
+        _levelSequence.Reset();
     }
 
     void Update()
@@ -49,7 +70,7 @@ public class LevelManager : MonoBehaviour
         if (EventCallback != null)
             EventCallback();
 
-        LevelEvent levelEvent = levelSequence.Next();
+        LevelEvent levelEvent = _levelSequence.Next();
         if (levelEvent == null)
         {
             EventTimer = float.PositiveInfinity;
@@ -59,8 +80,8 @@ public class LevelManager : MonoBehaviour
         EventCallback = levelEvent.Run(out EventTimer);
     }
 
-    public void ModifyScore(bool success)
+    public void ModifyScore(int amount)
     {
-        Score += success ? 10 : -1;
+        Score += amount;
     }
 }

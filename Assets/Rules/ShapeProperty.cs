@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum ShapeProperty
 {
+    None = 0,
     Cube = 1,
     Sphere = 2
 }

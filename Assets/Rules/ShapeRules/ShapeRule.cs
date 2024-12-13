@@ -14,10 +14,10 @@ public class ShapeRule : Rule
     }
 
     [SerializeField]
-    private List<Shape> AllowedShapes = new List<Shape>();
+    private List<ShapeProperty> AllowedShapes = new();
 
     public override bool Score(Scoreable scoreable)
     {
-        return AllowedShapes.Contains(scoreable.Shape);
+        return AllowedShapes.Contains(scoreable.ShapeProperty);
     }
 }

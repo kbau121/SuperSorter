@@ -61,7 +61,8 @@ public class AttractTarget : MonoBehaviour
     {
         foreach (Rigidbody rb in m_targets)
         {
-            ApplyAttraction(rb);
+            if (rb != null)
+                ApplyAttraction(rb);
         }
         m_targets.Clear();
     }

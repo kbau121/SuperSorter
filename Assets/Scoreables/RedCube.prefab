@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1e25858d6c35f4d905ff2ded949121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Color: 0
-  _Shape: 0
+  _colorProperty: 1
+  _shapeProperty: 1
 --- !u!114 &-1412606374103962712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +172,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 890112200923791128}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _throwScale: 1.5
 --- !u!114 &8679595704291627748
 MonoBehaviour:
   m_ObjectHideFlags: 0

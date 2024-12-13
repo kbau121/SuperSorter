@@ -16,10 +16,10 @@ public class ColorRule : Rule
     }
 
     [SerializeField]
-    private List<Color> AllowedColors = new List<Color>();
+    private List<ColorProperty> AllowedColors = new();
 
     public override bool Score(Scoreable scoreable)
     {
-        return AllowedColors.Contains(scoreable.Color);
+        return AllowedColors.Contains(scoreable.ColorProperty);
     }
 }

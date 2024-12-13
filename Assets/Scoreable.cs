@@ -7,29 +7,19 @@ public class Scoreable : MonoBehaviour
     [Header("Properties")]
 
     [SerializeField]
-    private ColorRule.Color _Color;
-    public ColorRule.Color Color {
-        get
-        {
-            return _Color;
-        }
-        private set
-        {
-            _Color = value;
-        }
+    private ColorProperty _colorProperty;
+    public ColorProperty ColorProperty
+    {
+        get => _colorProperty;
+        set => _colorProperty = value;
     }
 
     [SerializeField]
-    private ShapeRule.Shape _Shape;
-    public ShapeRule.Shape Shape {
-        get
-        {
-            return _Shape;
-        }
-        private set
-        {
-            _Shape = value;
-        }
+    private ShapeProperty _shapeProperty;
+    public ShapeProperty ShapeProperty
+    {
+        get => _shapeProperty;
+        set => _shapeProperty = value;
     }
 
     private bool IsScored = false;
@@ -55,8 +45,9 @@ public class Scoreable : MonoBehaviour
         LevelManager levelManager = levelRoot.LevelManager;
         if (levelManager == null)
             return;
-        
-        levelManager.ModifyScore(success);
+
+        int points = success ? levelManager.SuccessPoints : levelManager.FailurePoints;
+        levelManager.ModifyScore(points);
     }
 
     private void OnDestroy()

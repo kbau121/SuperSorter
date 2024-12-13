@@ -25,6 +25,7 @@ using UnityEngine.Pool;
 using Oculus.Interaction;
 using Oculus.Interaction.Throw;
 using System.Linq;
+using UnityEngine.Assertions;
 
 /// <summary>
 /// Moves the object it's attached to when an Interactor selects that object.
@@ -508,6 +509,7 @@ public class ExtendedGrabbable : PointableElement, IGrabbable, ITimeConsumer
                     _lookBackVelocites.RemoveAt(0);
                     _lookBackTorques.RemoveAt(0);
                 }
+                
             }
 
             _lastTime = time;
