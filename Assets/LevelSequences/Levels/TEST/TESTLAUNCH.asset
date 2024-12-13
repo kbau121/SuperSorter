@@ -20,4 +20,4 @@ MonoBehaviour:
   Target: {x: 0, y: 1.5, z: 0}
   TargetRadius: 0
   Objects:
-  - {fileID: 5887485900284755891, guid: 991e9b1abfb85c8408caec95f47519ee, type: 3}
+  - {fileID: 5887485900284755891, guid: 984e7a4637f48b54f8dda653e5ec649b, type: 3}
