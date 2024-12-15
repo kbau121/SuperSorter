@@ -16,6 +16,10 @@ public class StandardLevelTransitioner : MonoBehaviour
 
     void ReturnToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        if (LevelRoot.Instance.LevelManager.TimeElapsed > 1.0)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
     }
 }

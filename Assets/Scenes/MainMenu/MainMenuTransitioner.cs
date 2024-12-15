@@ -13,16 +13,23 @@ public class MainMenuTransitioner : MonoBehaviour
     [SerializeField] private InteractableUnityEventWrapper level2EventWrapper;
     [SerializeField] private InteractableUnityEventWrapper level3EventWrapper;
 
+    private float _loadTime;
+
     private void Start()
     {
         tutorialEventWrapper.WhenSelect.AddListener(GoTutorial);
         level1EventWrapper.WhenSelect.AddListener(GoLevel1);
         level2EventWrapper.WhenSelect.AddListener(GoLevel2);
         level3EventWrapper.WhenSelect.AddListener(GoLevel3);
+
+        _loadTime = Time.time;
     }
 
     private void GoTutorial()
     {
+        if (Time.time - _loadTime < 1.0)
+            return;
+
         Debug.Log("Going to the tutorial level.");
         SceneManager.LoadScene("TutorialLevel");
     }

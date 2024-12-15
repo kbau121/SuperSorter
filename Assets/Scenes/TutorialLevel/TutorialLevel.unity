@@ -1805,6 +1805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   successClip: {fileID: 8300000, guid: ea888fc8a2b42d84e8f2792aba7d6b2a, type: 3}
+  wrongItemClip: {fileID: 0}
 --- !u!4 &1688572519
 Transform:
   m_ObjectHideFlags: 0
@@ -2303,7 +2304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3387483236325752307, guid: 6e689809611c5ca4f89281b833aca382, type: 3}
       propertyPath: LauncherID
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2372,7 +2373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5491189009153744140, guid: f42556b0d5bd7cf48bf8a3af10e4c931, type: 3}
       propertyPath: LauncherID
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
